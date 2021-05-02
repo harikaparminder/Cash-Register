@@ -1,0 +1,75 @@
+/*JAVASCRIPT CASHRAGISTER*/
+/*CSS Stylesheet*/
+*{
+
+    padding: 0;
+    margin: 0;
+
+}
+p{
+    color: white;
+}
+
+
+body{
+
+    background-color: lightgray;
+    
+}
+
+input{
+
+    margin-top:25px ;
+
+}
+
+h4{
+
+    color: white;
+    text-shadow: 2px 2px black;
+
+}
+.red{
+
+    background-color:lightgray;
+    padding-top: 25px;
+
+}
+
+/*Middle Column Styling*/
+.marun{
+
+    background-color:maroon;
+    padding-top: 25px;
+}
+
+.green{
+
+    background-color: lightgray;
+    padding-top: 25px;
+}
+
+.pad{
+
+   padding-top:15px ;
+   padding-bottom: 15px;
+
+}
+
+#bill{
+
+    padding: 15px;
+}
+
+#subTotal,#total{
+    border-style: ridge;
+    padding: 15px;
+    
+}
+
+#tax{padding: 15px;
+}
+
+#enteredValue {
+    font-size: larger;
+}

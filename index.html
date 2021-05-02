@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Js Cash Register</title>
+    
+    <!--Bootstrap Stylesheet-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    
+
+</head>
+
+<body onload = "fnFillInputs()">
+   
+    <div class="container-fluid"><!--container-fluid begins-->
+        <div class="row pad"><!--row pad Start-->
+
+            <!--First Column-->
+            <div class="col-md-3 red text-center"><!--col-md-3 red text-center begins-->
+                <h4>CHOOSE AN ITEM</h4>
+                <hr>
+                <input type="text" id="choice0" onmouseover="fnTransfer(0)">
+                <br>
+                <input type="text" id="choice1" onmouseover="fnTransfer(1)">
+                <br>
+                <input type="text" id="choice2" onmouseover="fnTransfer(2)">
+                <br>
+                <input type="text" id="choice3" onmouseover="fnTransfer(3)">
+                <br>
+                <input type="text" id="choice4" onmouseover="fnTransfer(4)">
+                <hr>
+                
+                <select id="lstChoices" class="form-control" onchange="fnItemTransfer()">
+                    <option value=" "></option>
+                </select>
+
+                <hr>
+            </div><!--col-md-3 red text-center end-->
+            
+            <!--Middle Column-->
+            <div class="col-md-6 marun text-center"><!--col-md-6 blue text-center begins-->
+                <div class="container"><!--Container Start-->
+                    
+                    <div class="row">
+
+                        <div class="col-md-4 text-center">    
+                            <h4>ITEM</h4>
+                            <hr>
+                            <input type="text" id="item">                    
+                        </div>
+                        
+                        <div class="col-md-4 text-center"> 
+                           <h4> QUANTITY</h4>
+                           <hr>
+                           <input type="text" id="qty">
+                        </div>
+                        
+                        <div class="col-md-4 text-center">        
+                            <h4>PRICE</h4>
+                            <hr>
+                            <input type="price" id="price">  
+                        </div>
+
+                    </div>
+
+                    <br>   
+                    <p>* To add an item, enter the item, price and click on OK *</p>
+                    <hr>
+                    
+                    <!--Row 1 2 3-->
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <input type="button" id="1" class="btn btn-light btn-lg" value="1" onclick="fn1()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="2" class="btn btn-light btn-lg" value="2" onclick="fn2()">
+                        </div>
+   
+                        <div class="col-md-4">
+                            <input type="button" id="3" class="btn btn-light btn-lg" value="3" onclick="fn3()">
+                        </div>
+
+                    </div>
+                    
+                    <!--Row 4 5 6-->
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <input type="button" id="4" class="btn btn-light btn-lg" value="4" onclick="fn4()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="5" class="btn btn-light btn-lg" value="5" onclick="fn5()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="6" class="btn btn-light btn-lg" value="6" onclick="fn6()">
+                        </div>
+
+                    </div>
+                    
+                    <!--Row 7 8 9-->
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <input type="button" id="7" class="btn btn-light btn-lg" value="7" onclick="fn7()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="8" class="btn btn-light btn-lg" value="8" onclick="fn8()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="9" class="btn btn-light btn-lg" value="9" onclick="fn9()">
+                        </div>
+
+                    </div>
+
+                    <!--Row . 0 $-->
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <input type="button" id="dot" class="btn btn-light btn-lg" value=" . " onclick="fnDot()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="0" class="btn btn-light btn-lg" value="0" onclick="fn0()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="dollar" class="btn btn-light btn-lg" value="$" onclick="fn$()">
+                        </div>
+
+                    </div>
+
+                    <!--Row QTY DEL OK-->
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <input type="button" id="qty" class="btn btn-light btn-lg btn-block" value="Qty" onclick="fnQty()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="delete" class="btn btn-light btn-lg btn-block" value="Delete" onclick="fnDelete()">
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="button" id="ok" class="btn btn-light btn-lg btn-block" value="OK" onclick="fnOk()">
+                        </div>
+
+                    </div>
+                    <hr>
+                    <hr>
+                    <p id = "enteredValue"></p>
+
+                </div><!--Container Ends-->
+            </div><!--col-md-6 blue text-center Finish-->
+            
+            <!--Third Column-->
+            <div class="col-md-3 green text-center"><!--col-md-3 green text-center Begins-->
+                <div class="container"><!--Container Start-->
+                    
+                    <div class="row">
+                        <!--btn New Orders-->
+                        <div class="col-md-12 text-center">
+                            <input type="button" id="newOrders" class="btn btn-info btn-lg btn-block" value="New Orders" onclick="fnNewOrder()">
+                            <hr>
+                        </div>
+
+                    </div>
+                    <!--Bill Multiple Combobox-->
+                    <div class="row">
+
+                        <div class="col-md-12" id="bill">
+                            <select class="form-control" name="bill" id="billDetail" multiple>
+                            </select>
+                        </div>
+
+                    </div>
+                    <!--Sub Total-->
+                    <div class="row" id="subTotal">
+                        <div class="col-md-6 text-center">
+                            Sub-Total :    
+                        </div>
+                        
+                        <div class="col-md-6 text-center" id="subTotalPrice">
+                                0.00$
+                        </div>
+
+                    </div>
+
+                    <!--Tax -->
+                    <div class="row" id="tax">
+                        <div class="col-md-6 text-centers">
+                            TPS(5%) :<br><br>
+                            TVQ(9.975%)
+                        </div>
+
+                        <div class="col-md-6 text-centers">
+                            <i id="TPS">0.00$:</i><br><br>
+                            <i id="TVQ">0.00$</i>
+                        </div>
+                    </div>
+
+                    <div class="row" id="total">
+                        <div class="col-md-6 text-center">
+                           Total with tax :
+                        </div>
+                        
+                        <div class="col-md-6 text-center" id="totalWithTax">
+                            0.00$
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!--Button Remove item-->
+                        <div class="col-md-12">
+                            <input type="button" id="removeItem" class="btn btn-danger btn-lg btn-block" value="Remove Item" onclick="fnRemoveItem()">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <!--Button total-->
+                        <div class="col-md-12">
+                            <input type="button" id="confirm" class="btn btn-success btn-lg btn-block" value="Confirm Order" onclick="fnConfirmOrder()">
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <!--Button Total of the day-->
+                        <div class="col-md-12">
+                            <input type="button" id="totalOfDay" class="btn btn-primary btn-lg btn-block" value="Total Of the Day" onclick="fnTotalOfTheDay()">
+                            <br>
+                            <h4>Total Of the Day</h4>
+                            <input type="text" size="35" id="totalOfTheDayAns">
+                        </div>
+
+                    </div>
+                    
+                </div><!--Container Ends-->
+            </div><!--col-md-3 green text-center Ends-->
+
+        </div><!--row pad Ends-->
+
+    </div><!--container-fluid Ends-->
+
+    <!--Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!--Javascript Stylesheet-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
